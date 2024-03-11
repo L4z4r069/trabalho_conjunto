@@ -6,7 +6,7 @@
     <title>Formulário de Cadastro</title>
 </head>
 <body>
-    <form action="cadastrar.php" method="post">
+    <form action="alterar.php" method="post">
         ID Produto: <input type="number" name="id_produto"><br>
         Nome: <input type="text" name="n1"><br>
         Quantidade: <input type="number" name="v1"><br>

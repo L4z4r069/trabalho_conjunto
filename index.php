@@ -32,7 +32,7 @@ if ($result) {
                 foreach ($produtos as $produto) {
                     echo "<td>" . $produto['nome'] . "</td>";
                     echo "<td>" . $produto['quantidade'] . "</td>";
-                    echo '<td><a href="alterar.php?id_usuario=' .
+                    echo '<td><a href="form.php?id_usuario=' .
                         $produto['id_produto'] . '">Alterar</td>';
                     echo '<td><a href="excluir.php?id_usuario=' .
                         $produto['id_produto'] . '">Excluir</td>';
