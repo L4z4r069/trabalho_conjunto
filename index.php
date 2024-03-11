@@ -1,3 +1,15 @@
+<?php
+require_once "conecta.php";
+$conexao = conectar();
+$sql = "SELECT * FROM produto";
+$result = mysqli_query($conexao, $sql);
+if ($result) {
+    $produtos = mysqli_fetch_all($result, MYSQLI_ASSOC);
+} else {
+    echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,11 +19,27 @@
 </head>
 <body>
     <form action="crud.php" method="post">
+     <table>
+        <thead>
         <tr>
             <th> Nome </th>
             <th> Quantidade </th>
+            <th colspan="2"> Opções </th>
         </tr>
-
+        </thead>
+        <tbody>
+        <?php
+                foreach ($produtos as $produto) {
+                    echo "<td>" . $produto['nome'] . "</td>";
+                    echo "<td>" . $produto['quantidade'] . "</td>";
+                    echo '<td><a href="alterar.php?id_usuario=' .
+                        $produto['id_produto'] . '">Alterar</td>';
+                    echo '<td><a href="excluir.php?id_usuario=' .
+                        $produto['id_produto'] . '">Excluir</td>';
+                }
+            ?>
+        </tbody>
+     </table>  
 </form>
 </body>
 </html>

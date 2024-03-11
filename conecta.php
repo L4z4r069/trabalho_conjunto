@@ -1,11 +1,13 @@
 <?php
 
-$host = "localhost";
-$usr = "root";
-$senha = "";
-$banco = "produto";
+function conectar()
+{
+    $conexao = mysqli_connect("localhost", "root", "", "produto");
+    if ($conexao == false) {
+        die("Erro ao conectar a base de dados! " .
+            mysqli_connect_errno() . ": " .
+            mysqli_connect_error());
+    }
 
-
-$conecta = mysqli_connect($host, $usr, $senha, $banco)
-
-?>
+    return $conexao;
+}
