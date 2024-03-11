@@ -9,7 +9,7 @@
     <form action="cadastrar.php" method="post">
         ID Produto: <input type="number" name="id_produto"><br>
         Nome: <input type="text" name="n1"><br>
-        Quantidade: <input type="password" name="senha"><br>
+        Quantidade: <input type="number" name="v1"><br>
         <input type="submit" value="Enviar"><br>
     </form>
 </body>
